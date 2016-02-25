@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from enum import Enum
+from myenum import Enum
 
 # 枚举类
 # 定义枚举类
