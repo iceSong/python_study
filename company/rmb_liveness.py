@@ -1,7 +1,7 @@
 # -*- coding:utf8 -*-
 
 import os
-import datetime, time
+import datetime
 
 
 # 统计付费用户平均每天的登录次数
@@ -38,7 +38,7 @@ def read_dir(path):
 def calculate_avg():
     for val in data_list:
         d1 = datetime.datetime.now()
-        d2 = datetime.datetime.fromtimestamp(time.mktime(time.strptime(val[8], "%Y-%m-%d %H:%M:%S")))
+        d2 = datetime.datetime.strptime(val[8], "%Y-%m-%d %H:%M:%S")
         day = (d1 - d2).days
         if len(val) == 10:
             val[9] = round(val[9] / day, 3)  # 保留三位小数

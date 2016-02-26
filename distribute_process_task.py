@@ -13,7 +13,7 @@ QueueManager.register('get_task_queue')
 QueueManager.register('get_result_queue')
 
 # 链接到服务器，也就是运行manager的设备
-server_addr = '127.0.0.1'
+server_addr = '121.42.143.186'
 print('Connect to server %s' % server_addr)
 # 端口和验证码保持与服务器上一致
 m = QueueManager(address=(server_addr, 5000), authkey=b'abc')
