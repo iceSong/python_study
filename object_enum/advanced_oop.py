@@ -38,7 +38,7 @@ class Person(object):
 p = Person()
 p.name = 'KK'
 setattr(p, 'age', 12)  # 添加属性
-# p.weight = '200t'  # AttributeError: 'Person' object has no attribute 'weight'
+# p.weight = '200t'  # AttributeError: 'Person' object_enum has no attribute 'weight'
 
 p1 = Person()
 # print(p1.name)  # 没有为p1添加属性name

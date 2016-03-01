@@ -9,7 +9,7 @@ class Student(object):
     def __init__(self, name):
         self.name = name
 
-print(Student('Michael'))  # <__main__.Student object at 0x007DD2B0>
+print(Student('Michael'))  # <__main__.Student object_enum at 0x007DD2B0>
 
 
 # 定制类的输出，类似java中的头String()方法
@@ -18,11 +18,11 @@ class Student1(object):
         self.name = name
 
     def __str__(self):  # __str__()函数可以被print函数调用， __len__()可以被len()调用
-        return 'Student1 object (name: %s)' % self.name
+        return 'Student1 object_enum (name: %s)' % self.name
 
     __repr__ = __str__  # __str__（）返回数据给用户， __repr__()返回数据给开发者，如此在控制台直接输入实例，得到的也一样了
 
-print(Student1('Maria'))  # Student1 object (name: Maria)
+print(Student1('Maria'))  # Student1 object_enum (name: Maria)
 
 
 # 使自己的类可以用于for in循环， 实现__iter__()方法，返回一个迭代对象, 调用该对象的__next__()
@@ -53,7 +53,7 @@ class S1(object):
 for n in Fib():
     print(n)
 
-# for n in S():  # TypeError: 'S' object is not iterable  有__iter__是可迭代对象
+# for n in S():  # TypeError: 'S' object_enum is not iterable  有__iter__是可迭代对象
 #    print(n)
 
 
@@ -66,7 +66,7 @@ class Fib1(Fib):
         return a
 f1 = Fib1()
 print(f1[2])  # 用下标取出元素
-# print(f1[0:2])  # TypeError: 'slice' object cannot be interpreted as an integer
+# print(f1[0:2])  # TypeError: 'slice' object_enum cannot be interpreted as an integer
 # slice来确定是不是切片 isinstance(n, slice)  n.start  n.stop等
 
 
@@ -75,7 +75,7 @@ class Student(object):
     def __getattr__(self, item):  # 如果对象还没有绑定score对象，在调用score属性时就会自动调用getattr方法
         if item == 'score':  # 对于没有列出的则返回None, 可以手动抛出异常
             return lambda: 5
-        raise AttributeError('\'Student\' object has no attribute \'%s\'' % item)  # 这样当调用除了score以外的尚未定义的属性就会报错
+        raise AttributeError('\'Student\' object_enum has no attribute \'%s\'' % item)  # 这样当调用除了score以外的尚未定义的属性就会报错
 #  怎么用。。。？
 
 

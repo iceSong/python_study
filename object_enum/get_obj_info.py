@@ -31,7 +31,6 @@ s = Student()
 setattr(s, 'x', 2332)  # 绑定一个属性
 print(hasattr(s, 'x'))  # 判断有没有属性
 print(getattr(s, 'x'))  # 获取属性的值
-print(getattr(s, 'y', 'default value'))  # 不存在则返回默认值
 
 
 

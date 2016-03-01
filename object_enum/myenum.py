@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from myenum import Enum
+from object_enum.myenum import Enum
 
 # 枚举类
 # 定义枚举类
@@ -8,6 +8,5 @@ Month = Enum('Month', ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', '
 
 for name, member in Month.__members__.items():
     print(name, '=>', member, ',', member.value)
-
 
 

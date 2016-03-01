@@ -12,10 +12,10 @@ print(os.path.abspath('.'))  # 当前绝对路径
 print(os.path.join('.', 'song'))  # 拼接路径，可用于跨平台（windows\, unix/), 切记不能够直接拼接
 # .\song  ./song
 
-print(os.path.split('D:\\workspace\\PythonWS\\python_study\\file_dir.py'))  # 拆分路径
-# ('D:\\workspace\\PythonWS\\python_study', 'file_dir.py') 前面是路劲，后面是文件名
-print(os.path.splitext('D:\\workspace\\PythonWS\\python_study\\file_dir.py'))  # 拓展名
-# ('D:\\workspace\\PythonWS\\python_study\\file_dir', '.py')
+print(os.path.split('D:\\workspace\\PythonWS\\python_study\\file_dir_io.py'))  # 拆分路径
+# ('D:\\workspace\\PythonWS\\python_study', 'file_dir_io.py') 前面是路劲，后面是文件名
+print(os.path.splitext('D:\\workspace\\PythonWS\\python_study\\file_dir_io.py'))  # 拓展名
+# ('D:\\workspace\\PythonWS\\python_study\\file_dir_io', '.py')
 
 l = [x for x in os.listdir('.') if os.path.isdir(x)]  # 当前目录中的目录
 print(l)
