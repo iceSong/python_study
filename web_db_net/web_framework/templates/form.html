@@ -5,9 +5,9 @@
     <title>Form</title>
 </head>
 <body>
-    <% if message %}
+    {% if message %}
     <p style="color: darkred;">{{ message }}</p>
-    <% endif %}
+    {% endif %}
     <form action="signin" method="post">
         <legend>Please sigin in:</legend>
         <p><input name="username" placeholder="username" value="{{ username }}"></p>

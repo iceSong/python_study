@@ -2,8 +2,8 @@
 # 使用Flask作为web框架编写web应用
 
 from flask import Flask
-from flask import require
-from flask import render_temlate
+from flask import request
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -32,12 +32,12 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST', 'GET'])
 def home():
-    return render_temlate('home.html')
+    return render_template('home.html')
 
 
 @app.route('/signin', methods=['GET'])
 def signin_form():
-    return render_temlate('form.html')
+    return render_template('form.html')
 
 
 @app.route('/signin', methods=['POST'])
@@ -45,9 +45,9 @@ def signin():
     # 需要从request获取对象读取表单内容
     username = request.form['username']
     passwd = request.form['password']
-    if username and passwd:
-        return render_temlate('signin-ok.html', username=username)
-    return render_temlate('form.html', message='Bad username or password', username=username)
+    if username == 'admin' and passwd == 'password':
+        return render_template('signin-ok.html', username=username)
+    return render_template('form.html', message='Bad username or password', username=username)
 
 if __name__ == '__main__':
     app.run(debug=True)
